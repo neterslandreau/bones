@@ -1,3 +1,12 @@
 # IDE files
 nbproject
 
+# Temporary files
+app/tmp/cache/models/*
+app/tmp/cache/persistent/*                                                                                                                                    
+app/tmp/cache/views/*                                                                                                                                         
+app/tmp/cache/*
+app/tmp/logs/*
+app/tmp/sessions/*
+app/tmp/tests/*
+
