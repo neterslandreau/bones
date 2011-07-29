@@ -31,4 +31,15 @@
  * @subpackage    cake.app
  */
 class AppController extends Controller {
+/**
+ * Object constructor - Adds the Debugkit panel if in development mode
+ *
+ * @return void
+ */
+	public function __construct() {
+		if (Configure::read('debug')) {
+			$this->components[] = 'DebugKit.Toolbar';
+		}
+		parent::__construct();
+	}
 }
