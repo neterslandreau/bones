@@ -1,6 +1,6 @@
 # Bones #
 
-This is the basic cakephp app for a site with users. Very basic MVC has been included for
+This is the basic cakephp 1.3 app for a site with users. Very basic MVC has been included for
 extending the CakeDC users plugin.
 
 ## Installing ##
