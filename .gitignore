@@ -10,3 +10,6 @@ app/tmp/logs/*
 app/tmp/sessions/*
 app/tmp/tests/*
 
+# Configuration files
+app/config/database.php
+
