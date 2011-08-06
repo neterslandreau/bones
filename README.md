@@ -5,5 +5,6 @@ extending the CakeDC users plugin.
 
 ## Installing ##
 * clone the repo into /path/to/project/
+* replace app/weboot/index.php with one that is configured for your environment
 * create the empty database and app/config/database.php
 * execute from app dir: cake migration run all -plugin users
