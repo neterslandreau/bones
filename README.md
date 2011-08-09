@@ -10,7 +10,7 @@ extending the CakeDC users plugin.
 * execute from app dir: cake migration run all -plugin users
 
 ## Included plugins ##
-* Debug Kit
+* CakePHP Debug Kit
 * CakeDC migrations
 * CakeDC users
 * CakeDC utils
