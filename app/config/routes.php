@@ -37,6 +37,10 @@
 	Router::connect('/users/:action/*', array('plugin' => null, 'controller' => 'app_users'));
 	Router::connect('/users/users/*', array('plugin' => null, 'controller' => 'app_users'));
 	Router::connect('/users/users/:action/*', array('plugin' => null, 'controller' => 'app_users'));
+	Router::connect('/admin/users', array('plugin' => null, 'controller' => 'app_users', 'admin' => true));
+	Router::connect('/admin/users/:action/*', array('plugin' => null, 'controller' => 'app_users', 'admin' => true));
+	Router::connect('/admin/users/users/*', array('plugin' => null, 'controller' => 'app_users', 'admin' => true));
+	Router::connect('/admin/users/users/:action/*', array('plugin' => null, 'controller' => 'app_users', 'admin' => true));
 
 /**
  * ...and connect the rest of 'Pages' controller's urls.

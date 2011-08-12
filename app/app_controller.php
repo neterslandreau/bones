@@ -60,6 +60,10 @@ class AppController extends Controller {
 		parent::__construct();
 	}
 	public function beforeFilter() {
+		// i like to be able to view emails in development from debug kit
+		if (Configure::read('debug')) {
+			$this->Email->delivery = 'debug';
+		}
 		$prefixes = Configure::read('Routing.prefixes');
 		$admin = in_array('admin', $prefixes);
 		$this->Auth->loginAction = array('plugin' => null, 'controller' => 'app_users', 'action' => 'login', 'admin' => false);
@@ -95,11 +99,14 @@ class AppController extends Controller {
 	}
 
 	public function isAuthorized() {
-		if ($this->Auth->user() && $this->params['prefix'] != 'admin') {
-			return true;
-		}
-		if ($this->params['prefix'] == 'admin' && $this->Auth->user('is_admin')) {
-			return true;
+		if (isset($this->params['prefix'])) {
+			if ($this->params['prefix'] == 'admin' && $this->Auth->user('is_admin')) {
+				return true;
+			} 
+		} else {
+			if ($this->Auth->user()) {
+				return true;
+			}
 		}
 		return false;
 	}
