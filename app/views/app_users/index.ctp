@@ -1,5 +1,8 @@
 <?php
 /**
+ * This view overrides the plugin users view and "fixes" the expected parameter for the view link.
+ */
+/**
  * Copyright 2010, Cake Development Corporation (http://cakedc.com)
  *
  * Licensed under The MIT License
