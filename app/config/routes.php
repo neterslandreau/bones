@@ -30,6 +30,15 @@
 	Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
 
 /**
+ * Routes for the AppUsers extensions of Users plugin. app_users isn't as pretty as users
+ */
+	Router::connect('/users/users/reset_password/*', array('plugin' => null, 'controller' => 'app_users', 'action' => 'reset_password'));
+	Router::connect('/users', array('plugin' => null, 'controller' => 'app_users'));
+	Router::connect('/users/:action/*', array('plugin' => null, 'controller' => 'app_users'));
+	Router::connect('/users/users/*', array('plugin' => null, 'controller' => 'app_users'));
+	Router::connect('/users/users/:action/*', array('plugin' => null, 'controller' => 'app_users'));
+
+/**
  * ...and connect the rest of 'Pages' controller's urls.
  */
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
