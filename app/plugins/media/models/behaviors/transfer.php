@@ -350,10 +350,38 @@ class TransferBehavior extends ModelBehavior {
 			$short = substr($name, 0, 3);
 		}
 
-		$path  = $short . DS;
-		$path .= strtolower(Inflector::slug($filename));
+		$path  = $short . DS . $this->__randomPath($from['basename']);
+
+		// NEVER trust an uploaded filename!
+		//$path .= strtolower(Inflector::slug($filename));
+		$path .= uniqid();
 		$path .= !empty($extension) ? '.' . strtolower($extension) : null;
 
+		return $path;
+	}
+
+/**
+ * Builds a semi random path based on the filename to avoid having thousands of files
+ * or directories in one directory. This would result in a slowdown on most file systems.
+ *
+ * Works up to 5 level deep
+ *
+ * @param mixed $id
+ * @param integer $level
+ * @return mixed
+ */
+	private function __randomPath($id, $level = 3) {
+		if (!$id) {
+			return false;
+		}
+		$id = crc32($id);
+
+		$decrement = 0;
+		$path = null;
+		for ($i = 0; $i < $level; $i++) {
+			$decrement = $decrement -2;
+			$path .=  sprintf("%02d" . DS, substr('000000' . $id, $decrement, 2));
+		}
 		return $path;
 	}
 

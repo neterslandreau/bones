@@ -1,4 +1,5 @@
 <?php
+	require APP . 'plugins/media/config/core.php';
 /**
  * This is core configuration file.
  *
