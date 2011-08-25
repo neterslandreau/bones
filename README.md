@@ -8,6 +8,7 @@ extending the CakeDC users plugin.
 * replace app/weboot/index.php with one that is configured for your environment
 * create the empty database and app/config/database.php
 * execute from app dir: cake migration run all -plugin users
+* execute from app dir: cake migration run all -plugin tags
 
 ## Included plugins ##
 * CakePHP Debug Kit
@@ -15,6 +16,7 @@ extending the CakeDC users plugin.
 * CakeDC users
 * CakeDC utils
 * CakeDC search
+* CakeDC tags
 
 ## Extending the users plugin ##
 
