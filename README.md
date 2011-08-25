@@ -9,6 +9,7 @@ extending the CakeDC users plugin.
 * create the empty database and app/config/database.php
 * execute from app dir: cake migration run all -plugin users
 * execute from app dir: cake migration run all -plugin tags
+* execute from app dir: cake migration run all -plugin media
 
 ## Included plugins ##
 * CakePHP Debug Kit
@@ -17,6 +18,7 @@ extending the CakeDC users plugin.
 * CakeDC utils
 * CakeDC search
 * CakeDC tags
+* media (forked from david pearson's media plugin)
 
 ## Extending the users plugin ##
 
