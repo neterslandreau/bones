@@ -350,6 +350,7 @@ class TransferBehavior extends ModelBehavior {
 			$short = substr($name, 0, 3);
 		}
 
+		// build a semi random path
 		$path  = $short . DS . $this->__randomPath($from['basename']);
 
 		// NEVER trust an uploaded filename!
