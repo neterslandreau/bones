@@ -1,4 +1,7 @@
 <?php
+	if (preg_match('/test\.php/', $_SERVER['SCRIPT_FILENAME'])) {
+		define('MEDIA', TMP . 'tests' . DS);
+	}
 	require APP . 'plugins/media/config/core.php';
 /**
  * This is core configuration file.
